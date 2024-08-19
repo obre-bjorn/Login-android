@@ -27,10 +27,9 @@ class MainActivity : AppCompatActivity() {
         val editTextTextPassword2 = findViewById<EditText>(R.id.editTextTextPassword2)
 
         button.setOnClickListener {
-            if(editTextTextEmailAddress.text.isNullOrBlank() && editTextTextPassword2.text.isNullOrBlank()){
+            if(editTextTextEmailAddress.text.isNullOrBlank() || editTextTextPassword2.text.isNullOrBlank()){
                 Toast.makeText(this, "Please enter username and password", Toast.LENGTH_SHORT).show()
             }else{
-
                 val username = editTextTextEmailAddress.text.toString()
                 val intent = Intent(this, Login::class.java)
                 intent.putExtra("USERNAME", username)
